@@ -13,5 +13,9 @@ interpreter with the libraries under `requirements.txt` installed.
 
 The keyed text format (`ktx`) is a minimal human readable key-values to store text (markdown or others) indexed by keys. 
 
+
+Also included `numpy_practice.py` is an expanded version of → [This great numpy tutorial from machine learning mastery](https://www.machinelearningplus.com/python/101-numpy-exercises-python/)
+
+
 This work is licensed under the MIT license.  
 [![DOI](https://zenodo.org/badge/10173/rougier/numpy-100.svg)](https://zenodo.org/badge/latestdoi/10173/rougier/numpy-100)
