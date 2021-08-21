@@ -166,11 +166,11 @@ a[(a >= 5) & (a <= 10)]
 # Q. Convert the function maxx that works on two scalars, to work on two arrays.
 
 def maxx(x:np.array, y:np.array):
-    """Get the maximum of two items"""
-    if x >= y:
-        return x
-    else:
-        return y
+	"""Get the maximum of two items"""
+	if x >= y:
+		return x
+	else:
+		return y
 
 a = np.array([5, 7, 9, 8, 6, 4, 5])
 b = np.array([6, 3, 4, 8, 9, 7, 1])
@@ -887,9 +887,9 @@ output = []
 uniqs = np.unique(species_small)
 
 for val in uniqs:  # uniq values in group
-    for s in species_small[species_small==val]:  # each element in group
-        groupid = np.argwhere(uniqs == s).tolist()[0][0]  # groupid
-        output.append(groupid)
+	for s in species_small[species_small==val]:  # each element in group
+		groupid = np.argwhere(uniqs == s).tolist()[0][0]  # groupid
+		output.append(groupid)
 
 print(output)
 
@@ -972,6 +972,20 @@ def duplicates(arr):
 	return [elem in arr[:i] for i, elem in enumerate(arr)]
 duplicates(a)
 
+#2
+#pythonic version using set (think np.unique() but for sets)
+def c_duplicates(X):
+	seen = set()
+	seen_add = seen.add
+	out = []
+	for x in X:
+		if (x in seen or seen_add(x)):
+			out.append(True)
+		else:
+			out.append(False)
+	return out
+print(c_duplicates(a))
+
 #3
 # Create an all True array
 out = np.full(a.shape[0], True)
@@ -1012,7 +1026,7 @@ all_species = np.unique(cat_col)
 #3 For loop
 output = []
 for group_val in np.unique(cat_col):
-    output.append([group_val, num_col[cat_col==group_val].mean()])
+	output.append([group_val, num_col[cat_col==group_val].mean()])
 
 output
 
