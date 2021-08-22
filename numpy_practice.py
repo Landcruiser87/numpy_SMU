@@ -1,4 +1,6 @@
-# https://www.machinelearningplus.com/python/101-numpy-exercises-python/
+#https://www.machinelearningplus.com/python/101-numpy-exercises-python/
+#http://www.cs.umd.edu/~nayeem/courses/MSML605/files/04_Lec4_List_Numpy.pdf
+#https://www.gormanalysis.com/blog/python-numpy-for-your-grandma/
 
 
 
@@ -778,6 +780,13 @@ a[np.argpartition(a, -5)][-5:]
 np.random.seed(100)
 arr = np.random.randint(1,11,size=(6, 10))
 
+#Add a column of of the counts of each row
+#Tangent fun
+counts = np.array([np.unique(row).size for row in arr])
+counts = counts.reshape(arr.shape[0], 1)
+arr = np.hstack([arr, counts])
+arr
+
 
 #1
 def row_counts(arr2d):
@@ -831,7 +840,7 @@ arr_2d
 # Input
 
 np.random.seed(101) 
-arr = np.random.randint(1,4, size=6)
+arr = np.random.randint(1,10, size=20)
 arr
 
 #1
@@ -842,7 +851,7 @@ def one_hot_encode(arr):
 		out[i, k-1] = 1
 	return out
 
-print(np.arange(1, 4))
+print(np.arange(1, 11))
 one_hot_encode(arr)
 
 #2
@@ -971,6 +980,7 @@ def duplicates(arr):
 	#to check for dups
 	return [elem in arr[:i] for i, elem in enumerate(arr)]
 duplicates(a)
+#%%
 
 #2
 #pythonic version using set (think np.unique() but for sets)
@@ -986,6 +996,7 @@ def c_duplicates(X):
 	return out
 print(c_duplicates(a))
 
+#%%
 #3
 # Create an all True array
 out = np.full(a.shape[0], True)
