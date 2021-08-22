@@ -840,7 +840,7 @@ arr_2d
 # Input
 
 np.random.seed(101) 
-arr = np.random.randint(1,10, size=20)
+arr = np.random.randint(1,11, size=20)
 arr
 
 #1
@@ -851,7 +851,7 @@ def one_hot_encode(arr):
 		out[i, k-1] = 1
 	return out
 
-print(np.arange(1, 11))
+print("\t",np.arange(1, 11))
 one_hot_encode(arr)
 
 #2
@@ -922,10 +922,47 @@ a.argsort().argsort()
 
 #Input
 np.random.seed(10)
-a = np.random.randint(20, size=[2,5])
+a = np.random.randint(20, size=[5,5])
 print(a)
 
+#1
 print(a.ravel().argsort().argsort().reshape(a.shape))
+
+
+#2
+#Ranking the rows
+tmp = a.argsort()[::-1]
+np.arange(len(a))[tmp]+1
+
+#2b
+#Alternate ranking of rows
+sidx = np.argsort(a, axis=1)
+
+# Store shape info
+m,n = a.shape
+
+# Initialize output array
+out = np.empty((m,n),dtype=int)
+
+# Use sidx as column indices, while a range array for the row indices
+# to select one element per row. Since sidx is a 2D array of indices
+# we need to use a 2D extended range array for the row indices
+out[np.arange(m)[:,None], sidx] = np.arange(n)
+
+#3
+#Ranking the columns
+sidx = np.argsort(a, axis=0)
+out[sidx, np.arange(n)] = np.arange(m)[:,None]
+
+#4
+#Ranking all the columns
+tmp = a.argsort(axis=0).argsort(axis=0)[::-1]
+np.arange(len(a))[tmp]+1
+#3b Ranks for first column
+tmp[:,0]
+#3c Ranks for second column
+tmp[:,1]
+
 
 ##? 56. How to find the maximum value in each row of a numpy array 2d?
 # DifficultyLevel: L2
