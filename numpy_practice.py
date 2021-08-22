@@ -57,10 +57,14 @@ arr
 
 arr = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 
+#1 np.where
 out = np.where(arr % 2 == 1, -1, arr)
-
 out
-arr
+
+#2 list comp
+out = np.array([-1 if x % 2 == 1 else x for x in arr])
+out
+
 
 ##? 7. How to reshape an array?
 # Difficulty Level: L1
@@ -935,7 +939,7 @@ tmp = a.argsort()[::-1]
 np.arange(len(a))[tmp]+1
 
 #2b
-#Alternate ranking of rows
+#Alternate ranking of rows (8x faster)
 sidx = np.argsort(a, axis=1)
 
 # Store shape info
