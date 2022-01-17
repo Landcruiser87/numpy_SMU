@@ -1,7 +1,9 @@
+# Practice sites
+
 #https://www.machinelearningplus.com/python/101-numpy-exercises-python/
 #http://www.cs.umd.edu/~nayeem/courses/MSML605/files/04_Lec4_List_Numpy.pdf
 #https://www.gormanalysis.com/blog/python-numpy-for-your-grandma/
-
+#https://nickmccullum.com/advanced-python/numpy-indexing-assignment/
 
 
 # 1. Import numpy as np and see the version
