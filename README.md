@@ -21,7 +21,7 @@ Reference sites for further practice
  - [umd](http://www.cs.umd.edu/~nayeem/courses/MSML605/files/04_Lec4_List_Numpy.pdf)
  - [numpy_for_grandma](https://www.gormanalysis.com/blog/python-numpy-for-your-grandma/)
  - [advanced_indexing](https://nickmccullum.com/advanced-python/numpy-indexing-assignment/)
-  
+ - [numpy indexing](https://regenerativetoday.com/indexing-and-slicing-of-1d-2d-and-3d-arrays-using-numpy/)
 
 
 This work is licensed under the MIT license.  
